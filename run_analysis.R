@@ -65,8 +65,8 @@ selectedTrainData<-bind_cols(selectedTrainData,trainSubjects)
 # Add descriptive activity names to each data
 # First it was necessary to give a name to the test/train activities(actions). 
 # This was done by joining the actionLabels with tyest/train Actions
-selectedTestData<-bind_cols(selectedTestData,join(actionLabels,testActions,by="actionId")[2])
-selectedTrainData<-bind_cols(selectedTrainData,join(actionLabels,trainActions,by="actionId")[2])
+selectedTestData<-bind_cols(selectedTestData,join(testActions,actionLabels,by="actionId")[2])
+selectedTrainData<-bind_cols(selectedTrainData,join(trainActions,actionLabels,by="actionId")[2])
 
 # once test and train data are set up, we are ready to merge them
 tidyData<-bind_rows(selectedTestData,selectedTrainData)
